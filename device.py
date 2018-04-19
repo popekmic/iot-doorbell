@@ -1,4 +1,3 @@
-import socket
 from threading import Thread
 from time import sleep
 import requests
@@ -17,8 +16,6 @@ class MessageNotifyThread(Thread):
             sleep(5)
 
 TCP_IP = 'popekmic.pythonanywhere.com'
-TCP_PORT = 5005
-BUFFER_SIZE = 1024
 
 button_pressed = True
 
