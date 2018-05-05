@@ -1,6 +1,7 @@
 from threading import Thread
 from time import sleep
 import requests
+from subprocess import call
 
 class MessageNotifyThread(Thread):
     def __init__(self):
@@ -22,7 +23,6 @@ button_pressed = False
 message_thread = MessageNotifyThread()
 message_thread.start()
 
-
 def get_message():
     res = message_thread.message
     message_thread.message = None
@@ -40,7 +40,7 @@ def show_message(message):
     print(message)
 
 def get_image_from_camera():
-    #todo at school
+    call(["fswebcam", "--no-banner","-r 200x200", "ring.jpg"])
     return open("ring.jpg",'rb')
 
 def send_ring():
