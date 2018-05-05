@@ -17,7 +17,7 @@ class MessageNotifyThread(Thread):
 
 TCP_IP = 'popekmic.pythonanywhere.com'
 
-button_pressed = True
+button_pressed = False
 
 message_thread = MessageNotifyThread()
 message_thread.start()
