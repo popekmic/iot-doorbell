@@ -18,7 +18,7 @@ class MessageNotifyThread(Thread):
 
 TCP_IP = 'popekmic.pythonanywhere.com'
 
-button_pressed = False
+button_pressed = True
 
 message_thread = MessageNotifyThread()
 message_thread.start()
@@ -30,6 +30,7 @@ def get_message():
 
 def is_button_pressed():
     #todo at school
+    print("Button pressed")
     global button_pressed
     res = button_pressed
     button_pressed = False
@@ -40,15 +41,19 @@ def show_message(message):
     print(message)
 
 def get_image_from_camera():
+    print("starting image taking")
     call(["fswebcam", "--no-banner","-r 200x200", "ring.jpg"])
+    print("finished image taking")
     return open("ring.jpg",'rb')
 
 def send_ring():
     image = get_image_from_camera()
+    print("sending")
     url = 'http://{}/ring'.format(TCP_IP)
     files = {'media': image}
     requests.post(url,files = files)
     image.close()
+    print("finished sending")
 
 def main_loop():
     try:
