@@ -30,7 +30,6 @@ def get_message():
 
 def is_button_pressed():
     #todo at school
-    print("Button pressed")
     global button_pressed
     res = button_pressed
     button_pressed = False
