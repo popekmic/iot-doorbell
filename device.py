@@ -41,7 +41,7 @@ def show_message(message):
 
 def get_image_from_camera():
     print("starting image taking")
-    call(["fswebcam", "--no-banner","-r 200x200", "ring.jpg"])
+    call(["fswebcam", "--no-banner","-r 200x200","-s Gain=10%", "ring.jpg"])
     print("finished image taking")
     return open("ring.jpg",'rb')
 
