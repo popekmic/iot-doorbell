@@ -33,6 +33,7 @@ def get_message():
 def is_button_pressed():
     i, o, e = select.select( [sys.stdin], [], [], 1)
     if i:
+        sys.stdin.readline().strip()
         return True
     else:
         return False
