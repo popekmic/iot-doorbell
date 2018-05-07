@@ -29,14 +29,13 @@ def get_message():
     return res
 
 def is_button_pressed():
-    #todo at school
-    global button_pressed
-    res = button_pressed
-    button_pressed = False
-    return res
+    i, o, e = select.select( [sys.stdin], [], [], 1)
+    if i:
+        return true
+    else:
+        return false
 
 def show_message(message):
-    #todo at school
     print(message)
 
 def get_image_from_camera():
@@ -60,7 +59,7 @@ def main_loop():
             if is_button_pressed():
                 send_ring()
             new_message = get_message()
-            if new_message is not None:
+            if new_message:
                 show_message(new_message)
             sleep(0.05)
     except KeyboardInterrupt:
