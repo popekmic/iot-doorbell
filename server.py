@@ -120,8 +120,6 @@ def ring():
     socket.setdefaulttimeout(None)
     HOST = "smtp.gmail.com"
     PORT = 587
-    sender= "awindlord@gmail.com"
-    password = "o17wne28r"
     receiver= "michal.popek.bv@gmail.com"
 
     msg = """From: {}
