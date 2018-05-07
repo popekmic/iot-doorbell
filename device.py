@@ -1,6 +1,8 @@
 from threading import Thread
 from time import sleep
 import requests
+import sys
+import select
 from subprocess import call
 
 class MessageNotifyThread(Thread):
